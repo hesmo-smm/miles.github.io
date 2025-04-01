@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MILES Promo Code – Jetzt sparen!</title>
+  <meta name="description" content="Hol dir jetzt den exklusiven MILES Promo Code 'c8j7UphYbt'. Einfach anklicken, anzeigen lassen und automatisch kopieren.">
+  <meta name="keywords" content="miles promo code, miles rabatt, miles voucher, voucher, 10 euro rabatt miles, carsharing, gutschein">
+
+  <!-- Open Graph für Social Media Sharing -->
+  <meta property="og:title" content="MILES Promo Code – Jetzt sparen!">
+  <meta property="og:description" content="Klick und spar mit dem Code ********. Nur für Neukunden und für alle Carsharing-Fans!">
+  <meta property="og:image" content="https://www.ihredomain.de/images/miles-promo.jpg">
+  <meta property="og:url" content="https://www.ihredomain.de">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Rubik', sans-serif;
+  background: linear-gradient(135deg, #c1eac5, #77c9b5);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: scale(0.98); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .logo {
+      width: 100px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      color: #222;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .action-button {
+      background-color: #1e90ff;
+      color: #fff;
+      border: none;
+      padding: 15px 30px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(30, 144, 255, 0.3);
+      transition: background-color 0.3s ease, transform 0.2s;
+    }
+
+    .action-button:hover {
+      background-color: #1c7ed6;
+      transform: scale(1.03);
+    }
+
+    .promo-code {
+      display: none;
+      margin-top: 25px;
+      font-size: 24px;
+      font-weight: bold;
+      border: 2px dashed #1e90ff;
+      padding: 12px 24px;
+      border-radius: 6px;
+      background-color: #f4faff;
+    }
+
+    .copied-message {
+      display: none;
+      margin-top: 20px;
+      color: #27ae60;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img class="logo" src="MILES_Mobility_GmbH.png" alt="Miles logo">
+    <h1>🔓 Dein exklusiver Miles Promo Code</h1>
+    <p>Klick auf den Button, um deinen Rabattcode anzuzeigen und automatisch zu kopieren.</p>
+    <button class="action-button" onclick="revealAndCopy()">Code anzeigen &amp; kopieren</button>
+    <div class="promo-code" id="promoCode">c8j7UphYbt</div>
+    <p class="copied-message" id="copiedMessage">✅ Code wurde kopiert!</p>
+    <img src="http://canarytokens.com/terms/tags/images/od1cswcuw4lgl0br842po2ssb/submit.aspx">
+  </div>
+
+  <script>
+    function revealAndCopy() {
+      const promoCodeEl = document.getElementById("promoCode");
+      const messageEl = document.getElementById("copiedMessage");
+
+      promoCodeEl.style.display = "inline-block";
+
+      const code = promoCodeEl.innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        messageEl.style.display = "block";
+        setTimeout(() => {
+          messageEl.style.display = "none";
+        }, 3000);
+      }).catch(err => {
+        alert("Fehler beim Kopieren: " + err);
+      });
+    }
+  </script>
+</body>
+</html>
