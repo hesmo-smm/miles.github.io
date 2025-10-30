@@ -1,136 +1,152 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MILES Promo Code – Jetzt sparen!</title>
-  <meta name="description" content="Hol dir jetzt den exklusiven MILES Promo Code. Einfach anklicken, anzeigen lassen und automatisch kopieren.">
-  <meta name="keywords" content="miles promo code, miles rabatt, miles voucher, voucher, 10 euro rabatt miles, carsharing, gutschein">
-
-  <!-- Open Graph für Social Media Sharing -->
-  <meta property="og:title" content="MILES Promo Code – Jetzt sparen!">
-  <meta property="og:description" content="Klick und spar mit dem Code ********. Nur für Neukunden und für alle Carsharing-Fans!">
-  <meta property="og:image" content="https://hesmo-smm.github.io/miles.github.io/miles.png">
-  <meta property="og:url" content="https://hesmo-smm.github.io/miles.github.io/">
-  <meta property="og:type" content="website">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet" />
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Happy B‑Day Jakob</title>
   <style>
-    body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Rubik', sans-serif;
-  background: linear-gradient(135deg, #c1eac5, #77c9b5);
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: fadeIn 1.5s ease-in-out;
-}
-
-
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: scale(0.98); }
-      100% { opacity: 1; transform: scale(1); }
+    :root{
+      --bg:#0f1724; --card:#0b1220; --accent:#f9c74f;
+      --glass: rgba(255,255,255,0.06);
+      --text:#f8fafc;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     }
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#071028 0%, #071b2b 60%);color:var(--text)}
+    body.locked main{visibility:hidden;opacity:0;pointer-events:none}
+    .center{display:grid;place-items:center;min-height:100vh;padding:3rem}
+    .card{width:100%;max-width:1300px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:18px;padding:3.5rem;box-shadow:0 10px 40px rgba(2,6,23,0.6);backdrop-filter: blur(6px);}
+    h1{font-size:clamp(3rem,8vw,6rem);margin:0 0 .6rem;letter-spacing: -0.02em;text-align:center}
+    p.lead, h2.lead{max-width:760px;margin:0 auto 1.6rem;text-align:center;opacity:.9}
 
-    .card {
-      background: #ffffff;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      padding: 40px;
-      max-width: 500px;
-      width: 90%;
-      text-align: center;
-      transition: transform 0.3s ease;
-    }
+    /* photo grid full size */
+    #photo-grid{display:grid;gap:20px;grid-template-columns:1fr;margin-top:1.6rem}
+    #photo-grid .photo{border-radius:18px;overflow:hidden}
+    #photo-grid img{width:100%;height:auto;display:block;border-radius:18px}
 
-    .card:hover {
-      transform: translateY(-5px);
-    }
+    /* overlay / lock */
+    #overlay{position:fixed;inset:0;background:linear-gradient(180deg, rgba(2,6,23,0.92), rgba(2,6,23,0.95));display:flex;align-items:center;justify-content:center;z-index:9999}
+    .lockbox{background:rgba(255,255,255,0.02);border-radius:12px;padding:28px;min-width:320px;max-width:420px;text-align:center;box-shadow:0 8px 30px rgba(2,6,23,0.6)}
+    .lockbox h2{margin:0 0 .6rem}
+    .pw{width:100%;padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--text);font-size:1rem}
+    .btn{margin-top:12px;padding:10px 14px;border-radius:10px;border:0;background:var(--accent);color:#081018;font-weight:700;cursor:pointer}
+    .hint{margin-top:.8rem;font-size:.9rem;opacity:.9}
 
-    .logo {
-      width: 100px;
-      margin-bottom: 20px;
-    }
+    @media (max-width:700px){.card{padding:2rem}h1{font-size:3.2rem}}
 
-    h1 {
-      color: #222;
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
-
-    p {
-      color: #555;
-      margin-bottom: 30px;
-    }
-
-    .action-button {
-      background-color: #1e90ff;
-      color: #fff;
-      border: none;
-      padding: 15px 30px;
-      font-size: 16px;
-      border-radius: 8px;
-      cursor: pointer;
-      box-shadow: 0 5px 15px rgba(30, 144, 255, 0.3);
-      transition: background-color 0.3s ease, transform 0.2s;
-    }
-
-    .action-button:hover {
-      background-color: #1c7ed6;
-      transform: scale(1.03);
-    }
-
-    .promo-code {
-      display: none;
-      margin-top: 25px;
-      font-size: 24px;
-      font-weight: bold;
-      border: 2px dashed #1e90ff;
-      padding: 12px 24px;
-      border-radius: 6px;
-      background-color: #f4faff;
-    }
-
-    .copied-message {
-      display: none;
-      margin-top: 20px;
-      color: #27ae60;
-      font-weight: 500;
-    }
+    .confetti{pointer-events:none;position:fixed;inset:0;z-index:40}
   </style>
 </head>
-<body>
-  <div class="card">
-    <img class="logo" src="MILES_Mobility_GmbH.png" alt="Miles logo">
-    <h1>🔓 Dein exklusiver Miles Promo Code</h1>
-    <p>Klick auf den Button, um deinen Rabattcode anzuzeigen und automatisch zu kopieren.</p>
-    <button class="action-button" onclick="revealAndCopy()">Code anzeigen &amp; kopieren</button>
-    <div class="promo-code" id="promoCode">c8j7UphYbt</div>
-    <p class="copied-message" id="copiedMessage">✅ Code wurde kopiert!</p>
-    <img src="http://canarytokens.com/terms/tags/images/od1cswcuw4lgl0br842po2ssb/submit.aspx">
+<body class="locked">
+  <div id="overlay">
+    <div class="lockbox">
+      <h2>Passwort erforderlich</h2>
+      <input id="pw" class="pw" type="password" placeholder="hier passwort dawg" autocomplete="off" />
+      <button id="unlock" class="btn">Los</button>
+      <div class="hint">tips: touchen</div>
+    </div>
   </div>
 
-  <script>
-    function revealAndCopy() {
-      const promoCodeEl = document.getElementById("promoCode");
-      const messageEl = document.getElementById("copiedMessage");
+  <main class="center">
+    <div class="card" role="main">
+      <h1>Happy B‑Day Jakob</h1>
+      <p class="lead">HAPPY BIRTHDAY JABOB RAHHHHHH</p><p class="lead">hier ein gutschein braski für writers corner:</p>
 
-      promoCodeEl.style.display = "inline-block";
+      <div style="text-align:center; margin:2rem;">
+  <button id="reveal-btn" style="
+    font-size:2rem;      /* H2-Größe */
+    padding:0.6rem 1.2rem;
+    border-radius:10px;
+    border:none;
+    background:#f9c74f;
+    color:#081018;
+    font-weight:bold;
+    cursor:pointer;
+  ">dein code</button>
+  <div id="code-display" style="margin-top:1rem; font-size:2rem; font-weight:bold; display:none; color:#f9c74f;">
+    C7CG62K4K
+  </div>
+</div>
 
-      const code = promoCodeEl.innerText;
-      navigator.clipboard.writeText(code).then(() => {
-        messageEl.style.display = "block";
-        setTimeout(() => {
-          messageEl.style.display = "none";
-        }, 3000);
-      }).catch(err => {
-        alert("Fehler beim Kopieren: " + err);
-      });
+<script>
+  const btn = document.getElementById('reveal-btn');
+  const codeDiv = document.getElementById('code-display');
+  const code = 'C7CG62K4K';
+
+  btn.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(code); // kopiert automatisch
+      codeDiv.style.display = 'block';
+      btn.style.display = 'none';
+      alert('Code in Zwischenablage kopiert!'); // optional
+    } catch(err) {
+      console.error('Kopieren fehlgeschlagen', err);
     }
+  });
+</script>
+
+
+<div id="photo-grid" aria-live="polite">
+        <!-- Platzhalter-Fotos: ersetze photo1.jpg etc. durch echte Dateinamen im selben Ordner -->
+        <div class="photo"><img src="pics/photo (1).jpg" alt="Foto 1" onerror="this.style.opacity=.2;this.style.objectFit='contain';this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=400 height=300><rect width=\'100%\' height=\'100%\' fill=\'%23091e2e\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23ffffff\' font-size=18>photo1.jpg</text></svg>'"></div>
+        <div class="photo"><img src="pics/photo (2).jpg" alt="Foto 3" onerror="this.style.opacity=.2;this.style.objectFit='contain';this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=400 height=300><rect width=\'100%\' height=\'100%\' fill=\'%23091e2e\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23ffffff\' font-size=18>photo3.jpg</text></svg>'"></div>
+        <div class="photo"><img src="pics/photo (3).jpg" alt="Foto 2" onerror="this.style.opacity=.2;this.style.objectFit='contain';this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=400 height=300><rect width=\'100%\' height=\'100%\' fill=\'%23091e2e\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23ffffff\' font-size=18>photo2.jpg</text></svg>'"></div>
+        <div class="photo"><img src="pics/photo (4).jpg" alt="Foto 4" onerror="this.style.opacity=.2;this.style.objectFit='contain';this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=400 height=300><rect width=\'100%\' height=\'100%\' fill=\'%23091e2e\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23ffffff\' font-size=18>photo4.jpg</text></svg>'"></div>
+        <div class="photo"><img src="pics/photo (5).jpg" alt="Foto 4" onerror="this.style.opacity=.2;this.style.objectFit='contain';this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=400 height=300><rect width=\'100%\' height=\'100%\' fill=\'%23091e2e\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23ffffff\' font-size=18>photo4.jpg</text></svg>'"></div>
+
+    </div>
+
+    </div>
+  </main>
+
+  <audio id="bg-audio" src="audio.mp3" loop preload="auto"></audio>
+
+  <script>
+    (function(){
+      const overlay = document.getElementById('overlay');
+      const pwInput = document.getElementById('pw');
+      const btn = document.getElementById('unlock');
+      const audio = document.getElementById('bg-audio');
+      const PASSWORD = 'jakob';
+
+      function unlock(){
+        const v = pwInput.value.trim();
+        if(!v) return shake();
+        if(v === PASSWORD){
+          document.body.classList.remove('locked');
+          overlay.style.transition = 'opacity .35s ease';
+          overlay.style.opacity = '0';
+          setTimeout(()=> overlay.remove(), 400);
+          audio.play().catch(()=>{});
+          spawnConfetti();
+        } else {
+          pwInput.value = '';
+          pwInput.placeholder = 'Falsch — nochmal';
+          shake();
+        }
+      }
+
+      function shake(){
+        const el = pwInput;
+        el.animate([{transform:'translateX(0)'},{transform:'translateX(-8px)'},{transform:'translateX(8px)'},{transform:'translateX(0)'}],{duration:300});
+      }
+
+      btn.addEventListener('click', unlock);
+      pwInput.addEventListener('keydown', (e)=>{ if(e.key === 'Enter') unlock(); });
+
+      function spawnConfetti(){
+        const cvs = document.createElement('canvas');
+        cvs.className = 'confetti';
+        cvs.width = innerWidth; cvs.height = innerHeight; document.body.appendChild(cvs);
+        const ctx = cvs.getContext('2d');
+        const pieces = [];
+        for(let i=0;i<120;i++) pieces.push({x:Math.random()*cvs.width,y:Math.random()*-cvs.height,vy:1+Math.random()*4,size:4+Math.random()*10,rot:Math.random()*360,vr:Math.random()*8});
+        let raf;
+        function loop(){ctx.clearRect(0,0,cvs.width,cvs.height);for(const p of pieces){p.y+=p.vy;p.rot+=p.vr;ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot*Math.PI/180);ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size);ctx.restore();if(p.y>cvs.height+50)p.y=-30;}raf=requestAnimationFrame(loop);}loop();
+        setTimeout(()=>{cancelAnimationFrame(raf);cvs.remove();},6000);
+      }
+
+      window.addEventListener('load', ()=> pwInput.focus());
+    })();
   </script>
 </body>
 </html>
